@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <context-param><param-name>type</param-name>
+  	<param-value>euca</param-value>
+  </context-param>
+  <listener>
+ 
+  	<listener-class>com.infy.icode.downloader.server.DownloadListner</listener-class>
+  </listener>
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>download</servlet-name>
+    <servlet-class>com.infy.icode.downloader.server.DownloadServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>download</servlet-name>
+    <url-pattern>/eucalyptusdownloadmanager/download</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>EucalyptusDownloadManager.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
